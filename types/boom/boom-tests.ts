@@ -207,3 +207,10 @@ interface CustomData2 extends CustomDataBase {
 }
 
 type CustomData = CustomData1 | CustomData2;
+
+/**
+ * Test headers types
+ * see https://github.com/hapijs/boom/blob/master/lib/index.d.ts#L125
+ */
+const boomError = new Boom();
+boomError.output.headers = { 'undefined': undefined, 1: 1, 'array': ['index'], 'key': 'value' }
